@@ -13,9 +13,7 @@ namespace budgetApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("IM HERE");
             CreateHostBuilder(args).Build().Run();
-            Console.WriteLine("AND HERE");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
