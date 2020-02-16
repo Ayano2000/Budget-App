@@ -20,7 +20,6 @@ namespace budgetApp.Controllers
 
         public IActionResult Index()
         {
-            Console.WriteLine("HERE");
             return View();
         }
 
@@ -29,21 +28,9 @@ namespace budgetApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(string Name, int Amount, int Priority, int Rise)
+        public IActionResult Budget()
         {
-            try
-            {
-                ViewData["Name"] = Name;
-                ViewData["Amount"] = Amount;
-                ViewData["Priority"] = Priority;
-                ViewData["Rise"] = Rise;
-                return View("Budget");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
