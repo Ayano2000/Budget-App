@@ -23,6 +23,9 @@ namespace budgetApp.Controllers
         [HttpGet]
         public IActionResult FixedBudget() => View();
 
+        [HttpGet]
+        public IActionResult VariableBudget() => View();
+
         public IActionResult Item => View();
 
         [HttpPost]
@@ -35,6 +38,23 @@ namespace budgetApp.Controllers
                 Console.WriteLine(Request.Form["Rent"]);
                 Console.WriteLine(Request.Form["Insurance"]);
                 Console.WriteLine(Request.Form["MedicalAid"]);
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult VariableBudget(string dummy)
+        {
+            try
+            {
+                Console.WriteLine(Request.Form["Name"]);
+                Console.WriteLine(Request.Form["Amount"]);
+                Console.WriteLine(Request.Form["Priority"]);
+                Console.WriteLine(Request.Form["Rise"]);
                 return View();
             }
             catch
