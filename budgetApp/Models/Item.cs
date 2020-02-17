@@ -8,7 +8,8 @@ namespace budgetApp.Models {
             this.Priority = priority;
             this.Rise = rise;
         }
-
+        
+        public Item(){}
         public string Name { get; set; }
         public int Amount { get; set; }
         public int Priority { get; set; }
