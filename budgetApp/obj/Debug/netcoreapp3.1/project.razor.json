@@ -20511,11 +20511,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Home\\Budget.cshtml",
-      "TargetPath": "Views\\Home\\Budget.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -20526,6 +20521,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Budget\\Item.cshtml",
+      "TargetPath": "Views\\Budget\\Item.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -20533,6 +20533,11 @@
     {
       "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\Views\\Budget\\Budget.cshtml",
+      "TargetPath": "Views\\Budget\\Budget.cshtml",
       "FileKind": "mvc"
     },
     {

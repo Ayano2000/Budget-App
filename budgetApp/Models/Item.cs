@@ -1,4 +1,4 @@
-namespace budgetApp.Model {
+namespace budgetApp.Models {
     public class Item
     {
         public string Name { get; set; }
