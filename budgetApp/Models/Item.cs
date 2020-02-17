@@ -1,3 +1,5 @@
+using System;
+
 namespace budgetApp.Models {
     public class Item
     {
@@ -8,8 +10,15 @@ namespace budgetApp.Models {
             this.Priority = priority;
             this.Rise = rise;
         }
-        
         public Item(){}
+
+        public override string ToString()
+        {
+            return("Item: " + this.Name + " amount: " + this.Amount
+                                + " priority: " + this.Priority
+                                + " likelyhood to rise " + this.Rise);
+        }
+
         public string Name { get; set; }
         public int Amount { get; set; }
         public int Priority { get; set; }

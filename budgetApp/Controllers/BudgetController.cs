@@ -11,6 +11,8 @@ namespace budgetApp.Controllers
 {
     public class BudgetController : Controller
     {
+        private static Budget budget;
+
         private readonly ILogger<BudgetController> _logger;
 
         public BudgetController(ILogger<BudgetController> logger)
@@ -18,27 +20,52 @@ namespace budgetApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Budget()
-        {
-            return View();
-        }
+        public IActionResult Budget() => View();
+        
+        [HttpGet]
+        public IActionResult FixedBudget() => View();
 
-        public IActionResult Item()
-        {
-            return View();
-        }
+        [HttpGet]
+        public IActionResult VariableBudget() => View();
+
+        public IActionResult Item => View();
 
         [HttpPost]
-        public ActionResult Budget(string Name, int Amount, int Priority, int Rise)
+        public ActionResult FixedBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {
             try
             {
-                // Item item = new Item(Name, Amount, Priority, Rise);
-                IList<Item> itemList = new List<Item>();
-                Item to_add = new Item(Name, Amount, Priority, Rise);
-                itemList.Add(to_add);
-                // ViewData["items"] = itemList;
-                // return View("Item");
+                IList<Item> FixedItems = new List<Item>();
+                FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1));
+                FixedItems.Add(new Item("Other", System.Convert.ToInt32(Request.Form["Other"]), 5, 1));
+                FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1));
+                FixedItems.Add(new Item("Insurance", System.Convert.ToInt32(Request.Form["Insurance"]), 5, 1));
+                FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1));
+
+                budget = new Budget(FixedItems);
+                // budget.PrintBudget();
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult VariableBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
+        {
+            try
+            {
+                Item to_add = new Item(Request.Form["Name"],
+                                        System.Convert.ToInt32(Request.Form["Amount"]),
+                                        System.Convert.ToInt32(Request.Form["Priority"]),
+                                        System.Convert.ToInt32(Request.Form["Rise"]));
+                Console.WriteLine("TEST" + to_add);
+                IList<Item> VariableBudget = budget.budget;
+                VariableBudget.Add(to_add);
+                budget.budget = VariableBudget;
+                budget.PrintBudget();
                 return View();
             }
             catch
