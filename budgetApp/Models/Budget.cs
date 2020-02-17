@@ -5,12 +5,14 @@ namespace budgetApp.Models
 {
     public class Budget
     {
-        IList<Item> budget = new List<Item>();
+       //  IList<Item> budget;
 
         public Budget(IList<Item> FixedBudget)
         {
             this.budget = FixedBudget;
         }
+
+        public IList<Item> budget { get; set; }
 
         public void PrintBudget()
         {
@@ -18,6 +20,11 @@ namespace budgetApp.Models
             {
                 Console.WriteLine(item);
             }
+        }
+
+        public void AddItem(Item to_add)
+        {
+            this.budget.Add(to_add);
         }
     }
 }
