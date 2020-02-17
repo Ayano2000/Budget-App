@@ -18,27 +18,23 @@ namespace budgetApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Budget()
-        {
-            return View();
-        }
+        public IActionResult Budget() => View();
+        
+        [HttpGet]
+        public IActionResult FixedBudget() => View();
 
-        public IActionResult Item()
-        {
-            return View();
-        }
+        public IActionResult Item => View();
 
         [HttpPost]
-        public ActionResult Budget(string Name, int Amount, int Priority, int Rise)
+        public ActionResult FixedBudget(string dummy)
         {
             try
             {
-                // Item item = new Item(Name, Amount, Priority, Rise);
-                IList<Item> itemList = new List<Item>();
-                Item to_add = new Item(Name, Amount, Priority, Rise);
-                itemList.Add(to_add);
-                // ViewData["items"] = itemList;
-                // return View("Item");
+                Console.WriteLine(Request.Form["Salary"]);
+                Console.WriteLine(Request.Form["Other"]);
+                Console.WriteLine(Request.Form["Rent"]);
+                Console.WriteLine(Request.Form["Insurance"]);
+                Console.WriteLine(Request.Form["MedicalAid"]);
                 return View();
             }
             catch
