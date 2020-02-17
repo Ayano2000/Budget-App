@@ -11,6 +11,8 @@ namespace budgetApp.Controllers
 {
     public class BudgetController : Controller
     {
+        private Budget budget;
+
         private readonly ILogger<BudgetController> _logger;
 
         public BudgetController(ILogger<BudgetController> logger)
@@ -29,15 +31,19 @@ namespace budgetApp.Controllers
         public IActionResult Item => View();
 
         [HttpPost]
-        public ActionResult FixedBudget(string dummy)
+        public ActionResult FixedBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {
             try
             {
-                Console.WriteLine(Request.Form["Salary"]);
-                Console.WriteLine(Request.Form["Other"]);
-                Console.WriteLine(Request.Form["Rent"]);
-                Console.WriteLine(Request.Form["Insurance"]);
-                Console.WriteLine(Request.Form["MedicalAid"]);
+                IList<Item> FixedItems = new List<Item>();
+                FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1));
+                FixedItems.Add(new Item("Other", System.Convert.ToInt32(Request.Form["Other"]), 5, 1));
+                FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1));
+                FixedItems.Add(new Item("Insurance", System.Convert.ToInt32(Request.Form["Insurance"]), 5, 1));
+                FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1));
+
+                budget = new Budget(FixedItems);
+                budget.PrintBudget();
                 return View();
             }
             catch
@@ -47,14 +53,15 @@ namespace budgetApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult VariableBudget(string dummy)
+        public ActionResult VariableBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {
             try
             {
-                Console.WriteLine(Request.Form["Name"]);
-                Console.WriteLine(Request.Form["Amount"]);
-                Console.WriteLine(Request.Form["Priority"]);
-                Console.WriteLine(Request.Form["Rise"]);
+                Item to_add = new Item(Request.Form["Name"],
+                                        System.Convert.ToInt32(Request.Form["Amount"]),
+                                        System.Convert.ToInt32(Request.Form["Priority"]),
+                                        System.Convert.ToInt32(Request.Form["Rise"]));
+                // Console.WriteLine(to_add.Name + " " + to_add.Amount + " " + to_add.Priority + " " + to_add.Rise);
                 return View();
             }
             catch
