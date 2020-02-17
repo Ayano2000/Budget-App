@@ -1,0 +1,11 @@
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.exe
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.deps.json
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.runtimeconfig.json
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.runtimeconfig.dev.json
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.dll
+C:\mycsharp\SimpleCalc\bin\Debug\netcoreapp3.1\SimpleCalc.pdb
+C:\mycsharp\SimpleCalc\obj\Debug\netcoreapp3.1\SimpleCalc.csprojAssemblyReference.cache
+C:\mycsharp\SimpleCalc\obj\Debug\netcoreapp3.1\SimpleCalc.AssemblyInfoInputs.cache
+C:\mycsharp\SimpleCalc\obj\Debug\netcoreapp3.1\SimpleCalc.AssemblyInfo.cs
+C:\mycsharp\SimpleCalc\obj\Debug\netcoreapp3.1\SimpleCalc.dll
+C:\mycsharp\SimpleCalc\obj\Debug\netcoreapp3.1\SimpleCalc.pdb
