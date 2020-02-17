@@ -33,10 +33,11 @@ namespace budgetApp.Controllers
         {
             try
             {
-                 IList<Item> itemList = new List<Item>();
-                 Item to_add = new Item(Name, Amount, Priority, Rise);
-                 itemList.Add(to_add);
-                 ViewData["items"] = itemList;
+                // Item item = new Item(Name, Amount, Priority, Rise);
+                IList<Item> itemList = new List<Item>();
+                Item to_add = new Item(Name, Amount, Priority, Rise);
+                itemList.Add(to_add);
+                // ViewData["items"] = itemList;
                 // return View("Item");
                 return View();
             }
