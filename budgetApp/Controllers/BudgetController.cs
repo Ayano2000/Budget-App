@@ -11,7 +11,7 @@ namespace budgetApp.Controllers
 {
     public class BudgetController : Controller
     {
-        private Budget budget;
+        private static Budget budget;
 
         private readonly ILogger<BudgetController> _logger;
 
@@ -43,7 +43,7 @@ namespace budgetApp.Controllers
                 FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1));
 
                 budget = new Budget(FixedItems);
-                budget.PrintBudget();
+                // budget.PrintBudget();
                 return View();
             }
             catch
@@ -61,7 +61,11 @@ namespace budgetApp.Controllers
                                         System.Convert.ToInt32(Request.Form["Amount"]),
                                         System.Convert.ToInt32(Request.Form["Priority"]),
                                         System.Convert.ToInt32(Request.Form["Rise"]));
-                // Console.WriteLine(to_add.Name + " " + to_add.Amount + " " + to_add.Priority + " " + to_add.Rise);
+                Console.WriteLine("TEST" + to_add);
+                IList<Item> VariableBudget = budget.budget;
+                VariableBudget.Add(to_add);
+                budget.budget = VariableBudget;
+                budget.PrintBudget();
                 return View();
             }
             catch
