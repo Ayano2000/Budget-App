@@ -6,3 +6,13 @@ wwwroot/
 SimpleCalc/obj/Debug/
  budgetApp/bin/Debug/
  budgetApp/.vs/
+budgetApp/.vs/slnx.sqlite
+budgetApp/bin/Debug/netcoreapp3.1/budgetApp.dll
+budgetApp/bin/Debug/netcoreapp3.1/budgetApp.pdb
+budgetApp/obj/Debug/netcoreapp3.1/budgetApp.dll
+budgetApp/obj/Debug/netcoreapp3.1/budgetApp.pdb
+budgetApp/bin/Debug/netcoreapp3.1/budgetApp.Views.dll
+budgetApp/bin/Debug/netcoreapp3.1/budgetApp.dll
+budgetApp/obj/Debug/netcoreapp3.1/budgetApp.assets.cache
+budgetApp/obj/Debug/netcoreapp3.1/budgetApp.csprojAssemblyReference.cache
+budgetApp/obj/Debug/netcoreapp3.1/project.razor.json
