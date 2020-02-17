@@ -23,15 +23,20 @@ namespace budgetApp.Controllers
             return View();
         }
 
+        public IActionResult Item()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Budget(string Name, int Amount, int Priority, int Rise)
         {
             try
             {
-                // IList<Item> itemList = new List<Item>();
-                // Item to_add = new Item(Name, Amount, Priority, Rise);
-                // itemList.Add(to_add);
-                // ViewData["items"] = itemList;
+                 IList<Item> itemList = new List<Item>();
+                 Item to_add = new Item(Name, Amount, Priority, Rise);
+                 itemList.Add(to_add);
+                 ViewData["items"] = itemList;
                 // return View("Item");
                 return View();
             }

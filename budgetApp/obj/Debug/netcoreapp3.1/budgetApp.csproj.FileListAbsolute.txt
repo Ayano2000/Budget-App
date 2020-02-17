@@ -34,3 +34,4 @@ C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\bu
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.pdb
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.csproj.CopyComplete
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Budget.cshtml.g.cs
+C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Item.cshtml.g.cs

@@ -4,8 +4,9 @@
     "\\Controllers",
     "\\Models",
     "\\Views",
+    "\\Views\\Budget",
     "\\Views\\Home"
   ],
-  "SelectedNode": "\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\Models\\Item.cs",
   "PreviewInSolutionExplorer": false
 }
