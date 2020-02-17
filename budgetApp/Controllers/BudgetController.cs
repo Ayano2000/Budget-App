@@ -61,7 +61,6 @@ namespace budgetApp.Controllers
                                         System.Convert.ToInt32(Request.Form["Amount"]),
                                         System.Convert.ToInt32(Request.Form["Priority"]),
                                         System.Convert.ToInt32(Request.Form["Rise"]));
-                Console.WriteLine("TEST" + to_add);
                 IList<Item> VariableBudget = budget.budget;
                 VariableBudget.Add(to_add);
                 budget.budget = VariableBudget;

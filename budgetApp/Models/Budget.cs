@@ -22,9 +22,38 @@ namespace budgetApp.Models
             }
         }
 
-        public void AddItem(Item to_add)
+        // could be a boolean and return false if failure to update happens
+        public void UpdateItemAmount(String name, int amount)
         {
-            this.budget.Add(to_add);
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    item.Amount = amount;
+                }
+            }
+        }
+
+        public void UpdateItemPriority(String name, int priority)
+        {
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    item.Priority = priority;
+                }
+            }
+        }
+
+        public void UpdateItemRise(String name, int rise)
+        {
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    item.Rise = rise;
+                }
+            }
         }
     }
 }
