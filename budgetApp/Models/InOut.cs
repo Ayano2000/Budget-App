@@ -9,8 +9,21 @@ namespace budgetApp.Models
         public InOut(){}
     
         public void saveBudget(List<Item> Budget){
-
+            String filepath = "UserData/budget.txt";
+            String line;
+            try{
+                StreamWriter sw = new StreamWriter(filepath, false);
+                foreach (Item token in Budget){
+                    line = token.Name + "," + Convert.ToString(token.Amount) + ",";
+                    line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise);
+                    sw.WriteLine(line);
+                }
+                sw.Close();
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
+            }
         }
+        
         public List<Item> readBudget(){
             String filepath = "UserData/budget.txt";
             #nullable enable
