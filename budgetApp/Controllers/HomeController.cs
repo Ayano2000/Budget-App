@@ -23,6 +23,11 @@ namespace budgetApp.Controllers
             return View();
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
         public IActionResult Budget()
         {
             return View();

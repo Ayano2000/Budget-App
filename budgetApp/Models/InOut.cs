@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace budgetApp.Models
 {
-    public class InOut
+    public abstract class InOut
     {
         public InOut(){}
     
         public void saveBudget(List<Item> Budget){
 
         }
-        public List<Item> readBudget(){
+        public static List<Item> readBudget(){
             String filepath = "UserData/budget.txt";
             #nullable enable
             string? line;

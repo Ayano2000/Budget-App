@@ -4,10 +4,6 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    <button onclick="@("window.location.href='" + @Url.Action("Budget", "Tmp") + "?mode=load'");">LOAD<!-- File reader function, then goes to budget--></button>
+    <button onclick="@("window.location.href='" + @Url.Action("Budget", "Tmp") + "'");">NEW<!-- Goes to budget--></button>
 </div>
-<li>
-    <a href="/Budget/Budget">Budget</a>
-</li>
-<li>
-    <a href="/Budget/Item">Item</a>
-</li>
