@@ -55,6 +55,29 @@ namespace budgetApp.Models
                 }
             }
         }
+
+        public void UpdateItemType(String name, bool type)
+        {
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    item.expense = type;
+                }
+            }
+        }
+
+        public Boolean ItemExists(String name){
+        foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public int NetTotal()
         {
             int total = 0;
@@ -110,7 +133,21 @@ namespace budgetApp.Models
 
         public void AddItem(Item item)
         {
-            this.budget.Add(item);
+            if(ItemExists(item.Name)){
+                foreach(Item oldItem in this.budget)
+                {
+                    if(oldItem.Name == item.Name){
+                        oldItem.Amount=item.Amount;
+                        oldItem.expense = item.expense;
+                        oldItem.Priority = item.Priority;
+                        oldItem.Rise = item.Rise;
+                    }
+                }
+            }
+            else
+            {
+                this.budget.Add(item);
+            }
         }
     }
 }
