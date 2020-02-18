@@ -25,7 +25,7 @@ namespace budgetApp.Controllers
                 System.IO.File.WriteAllText(@"UserData/budget.txt",string.Empty);
                 budget.budget = InOut.readBudget();
             }
-            return View(new LoadModel {Mode = mode, Budget = this.budget.budget.ToList()});
+            return View(new LoadModel {Mode = mode, Budget = this.budget});
         }
 
         public ActionResult NewItem()
@@ -42,23 +42,25 @@ namespace budgetApp.Controllers
         {
             budget.DeleteItem(Name);
             InOut.saveBudget(budget.budget);
-            return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+            return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
         }
 
         [HttpPost]
         public ActionResult AddItem(string Name, int Amount, int Priority, int Rise, string Type)
         {
+            if(budget.ItemExists(Name))
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             try
             {
                 Item item = new Item(Name, Amount, Priority, Rise, Boolean.Parse(Type));
                 budget.AddItem(item);
                 InOut.saveBudget(budget.budget);
-                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             }
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             }
         }
 
@@ -70,14 +72,14 @@ namespace budgetApp.Controllers
                 budget.UpdateItemAmount(Name, Amount);
                 budget.UpdateItemPriority(Name, Priority);
                 budget.UpdateItemRise(Name, Rise);
-                //budget.UpdateItemExpense(Name, Boolean.Parse(Type));
+                budget.UpdateItemType(Name, Boolean.Parse(Type));
                 InOut.saveBudget(budget.budget);
-                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             }
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             }
         }
 
