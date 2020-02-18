@@ -1,5 +1,0 @@
-Food,153,1,4
-Programs,153223,5,1
-Rent,154233,2,2
-Water,13453,3,4
-Electricity,453,4,1

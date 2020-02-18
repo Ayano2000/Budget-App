@@ -7,9 +7,9 @@ namespace budgetApp.Models
     {
        //  IList<Item> budget;
 
-        public Budget(IList<Item> FixedBudget)
+        public Budget(IList<Item> budget_to_add)
         {
-            this.budget = FixedBudget;
+            this.budget = budget_to_add;
         }
 
         public IList<Item> budget { get; set; }
@@ -52,6 +52,17 @@ namespace budgetApp.Models
                 if (String.Equals(item.Name, name))
                 {
                     item.Rise = rise;
+                }
+            }
+        }
+
+        public void DeleteItem(String name)
+        {
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    this.budget.Remove(item);
                 }
             }
         }
