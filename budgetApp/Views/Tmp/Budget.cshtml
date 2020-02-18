@@ -39,5 +39,12 @@
         <input type="submit" id="submit" name="submit" />
     </form> *@
     <button>New Item</button>
-    <button>Save Budget</button>
+    @*<form method="POST" action="Save">*@
+        @* <button onclick="@("window.location.href='" + @Url.Action("Save","Tmp") + "?Budget='");">Save Budget</button> *@
+        @* @Html.ActionLink("SAVE BUDGET", "Save", "Tmp", (List<Item>) Model.info, new { @class = "btn btn-primary btn-large" }) *@
+            @Html.ActionLink("SAVE BUDGET", "Save", Model.info)
+        
+        @*<input type="hidden" value=*@
+       @* <button type="submit">Save Budget</button>
+    </form>*@
 </div>

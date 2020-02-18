@@ -30,6 +30,7 @@ namespace budgetApp.Controllers
 
         public IActionResult Item => View();
 
+
         [HttpPost]
         public ActionResult FixedBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {

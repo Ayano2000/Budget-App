@@ -21,6 +21,18 @@ namespace budgetApp.Controllers
         {
             return View(new LoadModel {Mode = mode, Info = InOut.readBudget()});
         }
+        
+        //public ActionResult Save(List<Item> Budget)
+        public ActionResult Save(List<Item> Budget)
+        {
+            foreach(Item x in Budget)
+            {
+                Console.WriteLine("-----");
+                 Console.WriteLine(x);
+            }
+            //InOut.saveBudget(Budget);
+            return View("Budget", new LoadModel {Mode = "load", Info = InOut.readBudget()});
+        }
         //[HttpPost]
         /* public ActionResult Budget(string Name, int Amount, int Priority, int Rise)
         {
