@@ -3,9 +3,9 @@
 bin/
 obj/
 Properties/
-wwwroot/
+./budgetApp/wwwroot/
 SimpleCalc/obj/Debug/
-budgetApp/bin/Debug/
-budgetApp/.vs/
-budgetApp/.vs/slnx.sqlite
-budgetApp/obj
+./budgetApp/bin/Debug/
+./budgetApp/.vs/
+./budgetApp/.vs/slnx.sqlite
+./budgetApp/obj
