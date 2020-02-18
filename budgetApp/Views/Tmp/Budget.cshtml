@@ -6,16 +6,18 @@
     <h1 class="display-4">Budget</h1>
     <p>Please try and create a new budget item</p>
     
+    
+    <table>
+        <tr>
+            <td><h4>Name</h4></td>
+            <td><h4>Amount</h4></td>
+            <td><h4>Priority</h4></td>
+            <td><h4>Rise</h4></td>
+            <td style="background-color: chocolate; border:none"></td>
+            <td style="background-color: chocolate; border:none"></td>
+        </tr>
     @if(Model.Mode == "load")
     {
-        <table>
-            <tr>
-                <td><h4>Name</h4></td>
-                <td><h4>Amount</h4></td>
-                <td><h4>Priority</h4></td>
-                <td><h4>Rise</h4></td>
-                <td style="background-color: chocolate; border:none"></td>
-            </tr>
         @foreach(Item x in Model.Budget)
         {
             <tr>
@@ -27,23 +29,15 @@
                 {
                     <td style="background-color:green">@x.Name</td>
                 }
-                <td contenteditable>@x.Amount</td>
-                <td contenteditable>@x.Priority</td>
-                <td contenteditable>@x.Rise</td>
-                <td style="background-color: rgb(168, 90, 34)" onclick="">Remove</td>
+                <td>@x.Amount</td>
+                <td>@x.Priority</td>
+                <td>@x.Rise</td>
+                <td style="background-color: rgb(168, 90, 34)" onclick="@("window.location.href='" + @Url.Action("EditItem", "Tmp", x) + "'");">Edit</td>
+                <td style="background-color: rgb(168, 90, 34)" onclick="@("window.location.href='" + @Url.Action("DeleteItem", "Tmp", x) + "'");">Remove</td>
             </tr>
         }
-        </table>
-        <br />
-        //load function
     }
-
-    @* <form method="post" action="">
-        Name: <input type="text" id="Name" name="Name" />
-        Amount: <input type="number" id="Amount" name="Amount" min="0" />
-        Importance: <input type="number" id="Priority" name="Priority" min="0" max="5" />
-        Likelyhood to rise: <input type="number" id="Rise" name="Rise" min="0" max="5" />
-        <input type="submit" id="submit" name="submit" />
-    </form> *@
-    <button onclick="@("window.location.href='" + @Url.Action("NewItem", "Tmp") + "'");" target="_blank">New Item</button>
+    </table>
+    <br />
+    <button onclick="@("window.location.href='" + @Url.Action("NewItem", "Tmp") + "'");">New Item</button>
 </div>

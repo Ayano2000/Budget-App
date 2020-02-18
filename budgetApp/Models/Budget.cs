@@ -103,6 +103,7 @@ namespace budgetApp.Models
                 if (String.Equals(item.Name, name))
                 {
                     this.budget.Remove(item);
+                    break ;
                 }
             }
         }

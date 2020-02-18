@@ -33,6 +33,18 @@ namespace budgetApp.Controllers
             return View();
         }
 
+        public ActionResult EditItem(string Name, string Amount, string Priority, string Rise, string Type)
+        {
+            return View(new DataViewModel {Name = Name, Amount = Amount, Priority = Priority, Rise = Rise, Expense = Type});
+        }
+
+        public ActionResult DeleteItem(string Name, string Amount, string Priority, string Rise, string Type)
+        {
+            budget.DeleteItem(Name);
+            InOut.saveBudget(budget.budget);
+            return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+        }
+
         [HttpPost]
         public ActionResult AddItem(string Name, int Amount, int Priority, int Rise, string Type)
         {
@@ -40,6 +52,25 @@ namespace budgetApp.Controllers
             {
                 Item item = new Item(Name, Amount, Priority, Rise, Boolean.Parse(Type));
                 budget.AddItem(item);
+                InOut.saveBudget(budget.budget);
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ChangeItem(string Name, int Amount, int Priority, int Rise, string Type)
+        {
+            try
+            {
+                budget.UpdateItemAmount(Name, Amount);
+                budget.UpdateItemPriority(Name, Priority);
+                budget.UpdateItemRise(Name, Rise);
+                //budget.UpdateItemExpense(Name, Boolean.Parse(Type));
                 InOut.saveBudget(budget.budget);
                 return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
             }

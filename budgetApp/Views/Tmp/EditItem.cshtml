@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Edit Item";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Budget</h1>
+    
+    <form method="post" action="/Tmp/ChangeItem">
+        <input type="hidden" id="Name" name="Name" value="@(""+@Model.Name)"/>
+        Amount: <input type="number" id="Amount" name="Amount" min="0" value="@(""+@Model.Amount)" required/>
+        <br />
+        Importance: <input type="number" id="Priority" name="Priority" min="0" max="5" value="@(""+@Model.Priority)" required/>
+        <br />
+        Likelyhood to rise: <input type="number" id="Rise" name="Rise" min="0" max="5" value="@(""+@Model.Rise)" required/>
+        <br />
+        Income/Expense?
+        <select name="Type">
+            <option default value="False">Income</option>
+            <option value="True">Expense</option>
+        </select>
+        <br />
+        <input type="submit" id="submit" name="Add Item" />
+    </form>
+    <button onclick="@("window.location.href='" + @Url.Action("Budget", "Tmp") + "?mode=load'");">Cancel</button>
+</div>
