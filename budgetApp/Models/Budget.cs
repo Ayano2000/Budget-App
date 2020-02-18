@@ -55,6 +55,46 @@ namespace budgetApp.Models
                 }
             }
         }
+        public int NetTotal()
+        {
+            int total = 0;
+                foreach(Item item in this.budget)
+                {
+                    if(item.expense)
+                    {
+                        total -= item.Amount;
+                    }
+                    else
+                    {
+                        total +=item.Amount;
+                    }
+                }
+            return total;
+        }
+        
+        public int NetIncome()
+        {
+            int total = 0;
+            foreach(Item item in this.budget)
+            {
+                if(!item.expense){
+                    total += item.Amount;
+                }
+            }
+            return total;
+        }
+
+        public int NetExpenses()
+        {
+            int total = 0;
+            foreach(Item item in this.budget)
+            {
+                if(item.expense){
+                    total += item.Amount;
+                }
+            }
+            return total;
+        }
 
         public void DeleteItem(String name)
         {
