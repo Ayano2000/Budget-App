@@ -60,7 +60,7 @@ namespace budgetApp.Models
             int total = 0;
                 foreach(Item item in this.budget)
                 {
-                    if(item.expense)
+                    if(item.Expense)
                     {
                         total -= item.Amount;
                     }
@@ -77,7 +77,7 @@ namespace budgetApp.Models
             int total = 0;
             foreach(Item item in this.budget)
             {
-                if(!item.expense){
+                if(!item.Expense){
                     total += item.Amount;
                 }
             }
@@ -89,7 +89,7 @@ namespace budgetApp.Models
             int total = 0;
             foreach(Item item in this.budget)
             {
-                if(item.expense){
+                if(item.Expense){
                     total += item.Amount;
                 }
             }

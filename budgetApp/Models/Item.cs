@@ -3,13 +3,13 @@ using System;
 namespace budgetApp.Models {
     public class Item
     {
-        public Item(string name, int amount, int priority, int rise,bool expense)
+        public Item(string name, int amount, int priority, int rise, bool expense)
         {
             this.Name = name;
             this.Amount = amount;
             this.Priority = priority;
             this.Rise = rise;
-            this.expense = true;
+            this.Expense = expense;
         }
 
         public Item(){}

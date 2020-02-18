@@ -45,7 +45,7 @@ namespace budgetApp.Models
                     pos = line.IndexOf(',');
                     input.Rise= int.Parse(line.Substring(0,pos));
                     line = line.Substring(pos + 1);
-                    input.expense = Boolean.Parse(line);
+                    input.Expense = Boolean.Parse(line);
                     Items.Add(input);
                 }
                 sr.Close();
