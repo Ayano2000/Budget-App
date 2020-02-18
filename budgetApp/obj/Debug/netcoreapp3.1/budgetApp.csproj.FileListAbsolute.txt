@@ -35,6 +35,7 @@ C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\bu
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.csproj.CopyComplete
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Budget.cshtml.g.cs
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Item.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -72,3 +73,5 @@ C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\bu
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.csproj.CopyComplete
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\FixedBudget.cshtml.g.cs
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\VariableBudget.cshtml.g.cs
+=======
+>>>>>>> 5c52b6e5936739862aa3e979caf0a3bc59985cfd
