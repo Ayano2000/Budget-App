@@ -60,8 +60,8 @@ namespace budgetApp.Controllers
                 Item to_add = new Item(Request.Form["Name"],
                                         System.Convert.ToInt32(Request.Form["Amount"]),
                                         System.Convert.ToInt32(Request.Form["Priority"]),
-                                        System.Convert.ToInt32(Request.Form["Rise"]),
-                                        true);
+                                        System.Convert.ToInt32(Request.Form["Rise"]));
+                                        System.Convert.ToBoolean(Request.Form["Expense"]));
                 IList<Item> VariableBudget = budget.budget;
                 VariableBudget.Add(to_add);
                 budget.budget = VariableBudget;
