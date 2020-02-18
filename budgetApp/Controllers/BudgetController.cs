@@ -36,12 +36,12 @@ namespace budgetApp.Controllers
         {
             try
             {
-                IList<Item> FixedItems = new List<Item>();
-                FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1));
-                FixedItems.Add(new Item("Other", System.Convert.ToInt32(Request.Form["Other"]), 5, 1));
-                FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1));
-                FixedItems.Add(new Item("Insurance", System.Convert.ToInt32(Request.Form["Insurance"]), 5, 1));
-                FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1));
+                List<Item> FixedItems = new List<Item>();
+                FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1, false));
+                FixedItems.Add(new Item("Other", System.Convert.ToInt32(Request.Form["Other"]), 5, 1, false));
+                FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1, true));
+                FixedItems.Add(new Item("Insurance", System.Convert.ToInt32(Request.Form["Insurance"]), 5, 1, true));
+                FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1, true));
 
                 budget = new Budget(FixedItems);
                 // budget.PrintBudget();
@@ -61,9 +61,9 @@ namespace budgetApp.Controllers
                 Item to_add = new Item(Request.Form["Name"],
                                         System.Convert.ToInt32(Request.Form["Amount"]),
                                         System.Convert.ToInt32(Request.Form["Priority"]),
-                                        System.Convert.ToInt32(Request.Form["Rise"]));
-                Console.WriteLine("TEST" + to_add);
-                IList<Item> VariableBudget = budget.budget;
+                                        System.Convert.ToInt32(Request.Form["Rise"]),
+                                        System.Convert.ToBoolean(Request.Form["Expense"]));
+                List<Item> VariableBudget = budget.budget;
                 VariableBudget.Add(to_add);
                 budget.budget = VariableBudget;
                 budget.PrintBudget();

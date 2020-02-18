@@ -15,7 +15,7 @@ namespace budgetApp.Models
                 StreamWriter sw = new StreamWriter(filepath, false);
                 foreach (Item token in Budget){
                     line = token.Name + "," + Convert.ToString(token.Amount) + ",";
-                    line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise);
+                    line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise) + "," + Convert.ToString(token.expense);
                     sw.WriteLine(line);
                 }
                 sw.Close();
@@ -23,6 +23,7 @@ namespace budgetApp.Models
                 Console.WriteLine(e.Message);
             }
         }
+
         public static List<Item> readBudget(){
             String filepath = "UserData/budget.txt";
             #nullable enable
@@ -42,7 +43,10 @@ namespace budgetApp.Models
                     pos = line.IndexOf(',');
                     input.Priority= int.Parse(line.Substring(0,pos));
                     line = line.Substring(pos + 1);
-                    input.Rise= int.Parse(line);
+                    pos = line.IndexOf(',');
+                    input.Rise= int.Parse(line.Substring(0,pos));
+                    line = line.Substring(pos + 1);
+                    input.expense = Boolean.Parse(line);
                     Items.Add(input);
                 }
                 sr.Close();

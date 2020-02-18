@@ -11,46 +11,44 @@ namespace budgetApp.Controllers
 {
     public class TmpController : Controller
     {
+        Budget budget = new Budget(InOut.readBudget());
         private readonly ILogger<BudgetController> _logger;
 
         public TmpController(ILogger<BudgetController> logger)
         {
             _logger = logger;
         }
-        public IActionResult Budget(string mode = "new", List<Item> Info = null)
+        public IActionResult Budget(string mode = "new")
         {
-            return View(new LoadModel {Mode = mode, Info = InOut.readBudget()});
-        }
-        
-        //public ActionResult Save(List<Item> Budget)
-        public ActionResult Save(List<Item> Budget)
-        {
-            foreach(Item x in Budget)
+            if(mode.Equals("new"))
             {
-                Console.WriteLine("-----");
-                 Console.WriteLine(x);
+                System.IO.File.WriteAllText(@"UserData/budget.txt",string.Empty);
+                budget.budget = InOut.readBudget();
             }
-            //InOut.saveBudget(Budget);
-            return View("Budget", new LoadModel {Mode = "load", Info = InOut.readBudget()});
+            return View(new LoadModel {Mode = mode, Budget = this.budget.budget.ToList()});
         }
-        //[HttpPost]
-        /* public ActionResult Budget(string Name, int Amount, int Priority, int Rise)
+
+        public ActionResult NewItem()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddItem(string Name, int Amount, int Priority, int Rise, string Type)
         {
             try
             {
-                // Item item = new Item(Name, Amount, Priority, Rise);
-                IList<Item> itemList = new List<Item>();
-                Item to_add = new Item(Name, Amount, Priority, Rise);
-                itemList.Add(to_add);
-                // ViewData["items"] = itemList;
-                // return View("Item");
-                return View();
+                Item item = new Item(Name, Amount, Priority, Rise, Boolean.Parse(Type));
+                budget.AddItem(item);
+                InOut.saveBudget(budget.budget);
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                Console.WriteLine(e);
+                return View("Budget", new LoadModel {Mode = "load", Budget = this.budget.budget.ToList()});
             }
-        } */
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
