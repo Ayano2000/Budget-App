@@ -13,6 +13,8 @@ namespace budgetApp.Controllers
     {
         private static Budget budget;
 
+        private static bool visited = false;
+
         private readonly ILogger<BudgetController> _logger;
 
         public BudgetController(ILogger<BudgetController> logger)
@@ -20,19 +22,39 @@ namespace budgetApp.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Budget() => View();
-        
+
         [HttpGet]
         public IActionResult FixedBudget() => View();
 
         [HttpGet]
-        public IActionResult VariableBudget() => View();
+        public IActionResult GeneralBudget()
+        {
+            if (visited == false)
+            {
+                string link = "http://localhost:5000/Budget/FixedBudget";
+                return Redirect(link);
+            }
+            return View();
 
-        public IActionResult Item => View();
+        }
+
+        [HttpGet]
+        public IActionResult VariableBudget()
+        {
+            if (visited == false)
+            {
+                string link = "http://localhost:5000/Budget/FixedBudget";
+                return Redirect(link);
+            }
+            return View();
+        }
 
         [HttpPost]
         public ActionResult FixedBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {
+            visited = true;
             try
             {
                 IList<Item> FixedItems = new List<Item>();
@@ -43,7 +65,29 @@ namespace budgetApp.Controllers
                 FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1, true));
 
                 budget = new Budget(FixedItems);
-                // budget.PrintBudget();
+                budget.PrintBudget();
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult GeneralBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
+        {
+            try
+            {
+                IList<Item> updatedBudget = budget.budget;
+                updatedBudget.Add(new Item("Groceries", System.Convert.ToInt32(Request.Form["Groceries"]), 5, 1, false));
+                updatedBudget.Add(new Item("Transport", System.Convert.ToInt32(Request.Form["Transport"]), 5, 1, false));
+                updatedBudget.Add(new Item("Utilities", System.Convert.ToInt32(Request.Form["Utilities"]), 5, 1, true));
+                updatedBudget.Add(new Item("Leisure", System.Convert.ToInt32(Request.Form["Leisure"]), 5, 1, true));
+                updatedBudget.Add(new Item("Phone", System.Convert.ToInt32(Request.Form["Phone"]), 5, 1, true));
+                updatedBudget.Add(new Item("Savings", System.Convert.ToInt32(Request.Form["Savings"]), 5, 1, true));
+                budget.budget = updatedBudget;
+                budget.PrintBudget();
                 return View();
             }
             catch
@@ -60,7 +104,7 @@ namespace budgetApp.Controllers
                 Item to_add = new Item(Request.Form["Name"],
                                         System.Convert.ToInt32(Request.Form["Amount"]),
                                         System.Convert.ToInt32(Request.Form["Priority"]),
-                                        System.Convert.ToInt32(Request.Form["Rise"]));
+                                        System.Convert.ToInt32(Request.Form["Rise"]),
                                         System.Convert.ToBoolean(Request.Form["Expense"]));
                 IList<Item> VariableBudget = budget.budget;
                 VariableBudget.Add(to_add);
