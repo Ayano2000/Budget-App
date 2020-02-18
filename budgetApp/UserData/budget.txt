@@ -1,5 +1,4 @@
 Food,135,5,2,True
 WetReeds,100,2,4,False
 Wetknees,100,2,4,True
-Wetknees,100,2,4,True
-Wetknees,100,2,4,True
+GreenGor,3300,4,2,True
