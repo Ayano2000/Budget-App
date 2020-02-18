@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\bbdnet2209\\.nuget\\packages\\": {}
+    "C:\\Users\\bbdnet2211\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbdnet2209\\Desktop\\Work\\Budget-App\\budgetApp\\budgetApp.csproj",
+      "projectUniqueName": "C:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\budgetApp.csproj",
       "projectName": "budgetApp",
-      "projectPath": "C:\\Users\\bbdnet2209\\Desktop\\Work\\Budget-App\\budgetApp\\budgetApp.csproj",
-      "packagesPath": "C:\\Users\\bbdnet2209\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbdnet2209\\Desktop\\Work\\Budget-App\\budgetApp\\obj\\",
+      "projectPath": "C:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\budgetApp.csproj",
+      "packagesPath": "C:\\Users\\bbdnet2211\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbdnet2211\\source\\repos\\Budget-App\\budgetApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bbdnet2209\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bbdnet2211\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
