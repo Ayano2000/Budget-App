@@ -7,9 +7,9 @@
     <p>Please try and create a new budget item</p>
     
     <form method="post" action="/Tmp/AddItem">
-        Name: <input type="text" id="Name" name="Name" required/>
+        Name: <input type="text" id="Name" name="Name" maxlength="20" required/>
         <br />
-        Amount: <input type="number" id="Amount" name="Amount" min="0" required/>
+        Amount: <input type="number" id="Amount" name="Amount" min="0" max = "2000000000" required/>
         <br />
         Importance: <input type="number" id="Priority" name="Priority" min="0" max="5" required/>
         <br />
