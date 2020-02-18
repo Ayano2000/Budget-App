@@ -57,7 +57,6 @@ C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\bu
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.TagHelpers.input.cache
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.TagHelpers.output.cache
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.RazorCoreGenerate.cache
-C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Budget.cshtml.g.cs
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\Item.cshtml.g.cs
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -71,3 +70,5 @@ C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\bu
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.dll
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.pdb
 C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\budgetApp.csproj.CopyComplete
+C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\FixedBudget.cshtml.g.cs
+C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\VariableBudget.cshtml.g.cs
