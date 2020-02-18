@@ -5,7 +5,15 @@ obj/
 Properties/
 ./budgetApp/wwwroot/
 SimpleCalc/obj/Debug/
+<<<<<<< HEAD
 ./budgetApp/bin/Debug/
 ./budgetApp/.vs/
 ./budgetApp/.vs/slnx.sqlite
 ./budgetApp/obj
+=======
+budgetApp/bin/Debug/
+budgetApp/.vs/
+budgetApp/.vs/slnx.sqlite
+budgetApp/obj/*
+budgetApp/bin/*
+>>>>>>> 04fb839c2762e7d527dc94b0b69007048f89e948
