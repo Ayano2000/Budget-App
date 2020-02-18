@@ -5,9 +5,9 @@ namespace budgetApp.Models
 {
     public class Budget
     {
-       //  IList<Item> budget;
+        //IList<Item> budget;
 
-        public Budget(IList<Item> budget_to_add)
+        public Budget(List<Item> budget_to_add)
         {
             this.budget = budget_to_add;
         }
@@ -105,6 +105,11 @@ namespace budgetApp.Models
                     this.budget.Remove(item);
                 }
             }
+        }
+
+        public void AddItem(Item item)
+        {
+            this.budget.Add(item);
         }
     }
 }

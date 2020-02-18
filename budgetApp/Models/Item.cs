@@ -9,9 +9,9 @@ namespace budgetApp.Models {
             this.Amount = amount;
             this.Priority = priority;
             this.Rise = rise;
-            this.expense = true;
+            this.expense = expense;
         }
-
+        
         public Item(){}
 
         public override string ToString()
