@@ -7,7 +7,7 @@ namespace budgetApp.Models
     public abstract class InOut
     {
 
-        public static void saveBudget(List<Item> Budget){
+        public static void saveBudget(IList<Item> Budget){
             String filepath = "UserData/budget.txt";
             String line;
             try{

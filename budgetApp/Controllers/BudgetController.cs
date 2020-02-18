@@ -37,7 +37,7 @@ namespace budgetApp.Controllers
             {
                 IList<Item> FixedItems = new List<Item>();
                 FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1, false));
-                FixedItems.Add(new Item("Other", System.Convert.ToInt32(Request.Form["Other"]), 5, 1, false));
+                FixedItems.Add(new Item("Other Income", System.Convert.ToInt32(Request.Form["Other"]), 5, 1, false));
                 FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1, true));
                 FixedItems.Add(new Item("Insurance", System.Convert.ToInt32(Request.Form["Insurance"]), 5, 1, true));
                 FixedItems.Add(new Item("MedicalAid", System.Convert.ToInt32(Request.Form["MedicalAid"]), 5, 1, true));
