@@ -5,9 +5,9 @@
 <div class="text-center">
     <h1 class="display-4">Budget</h1>
     
-    <form method="post" action="/Tmp/ChangeItem">
+    <form method="post" action="/Budget/ChangeItem">
         <input type="hidden" id="Name" name="Name" value="@(""+@Model.Name)"/>
-        Amount: <input type="number" id="Amount" name="Amount" min="0" value="@(""+@Model.Amount)" required/>
+        Amount: <input type="number" id="Amount" name="Amount" min="0" max = "2000000000" value="@(""+@Model.Amount)" required/>
         <br />
         Importance: <input type="number" id="Priority" name="Priority" min="0" max="5" value="@(""+@Model.Priority)" required/>
         <br />
@@ -21,5 +21,5 @@
         <br />
         <input type="submit" id="submit" name="Add Item" />
     </form>
-    <button onclick="@("window.location.href='" + @Url.Action("Budget", "Tmp") + "?mode=load'");">Cancel</button>
+    <button onclick="@("window.location.href='" + @Url.Action("Budget", "Budget") + "?mode=load'");">Cancel</button>
 </div>
