@@ -1,7 +1,6 @@
 using System.IO;
 using System;
 using System.Collections.Generic;
-
 namespace budgetApp.Models
 {
     public abstract class InOut
@@ -13,7 +12,7 @@ namespace budgetApp.Models
             try{
                 StreamWriter sw = new StreamWriter(filepath, false);
                 foreach (Item token in Budget){
-                    line = token.Name + "," + Convert.ToString(token.Amount) + ",";
+                    line = token.Name.Replace(",","") + "," + Convert.ToString(token.Amount) + ",";
                     line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise) + "," + Convert.ToString(token.Expense);
                     sw.WriteLine(line);
                 }

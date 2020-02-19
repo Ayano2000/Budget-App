@@ -1,3 +1,4 @@
-Salary,20000,5,1,False
-food,2000,5,3,True
-phone,800,4,0,True
+Testing,200,3,5,True
+Testing2,300,1,2,False
+Wowwww,234,1,2,False
+Abandonhope,1234,5,1,True
