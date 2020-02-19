@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Models",
-    "\\Views",
-    "\\Views\\Budget",
-    "\\Views\\Home"
+    "\\Models"
   ],
-  "SelectedNode": "\\Models\\Item.cs",
+  "SelectedNode": "\\Models\\Budget.cs",
   "PreviewInSolutionExplorer": false
 }

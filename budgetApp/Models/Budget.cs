@@ -62,7 +62,7 @@ namespace budgetApp.Models
             {
                 if (String.Equals(item.Name, name))
                 {
-                    item.expense = type;
+                    item.Expense = type;
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace budgetApp.Models
             int total = 0;
                 foreach(Item item in this.budget)
                 {
-                    if(item.expense)
+                    if(item.Expense)
                     {
                         total -= item.Amount;
                     }
@@ -100,7 +100,7 @@ namespace budgetApp.Models
             int total = 0;
             foreach(Item item in this.budget)
             {
-                if(!item.expense){
+                if(!item.Expense){
                     total += item.Amount;
                 }
             }
@@ -112,7 +112,7 @@ namespace budgetApp.Models
             int total = 0;
             foreach(Item item in this.budget)
             {
-                if(item.expense){
+                if(item.Expense){
                     total += item.Amount;
                 }
             }
@@ -138,7 +138,7 @@ namespace budgetApp.Models
                 {
                     if(oldItem.Name == item.Name){
                         oldItem.Amount=item.Amount;
-                        oldItem.expense = item.expense;
+                        oldItem.Expense = item.Expense;
                         oldItem.Priority = item.Priority;
                         oldItem.Rise = item.Rise;
                     }

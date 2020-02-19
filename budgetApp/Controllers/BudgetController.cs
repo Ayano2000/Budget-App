@@ -81,8 +81,8 @@ namespace budgetApp.Controllers
             try
             {
                 IList<Item> updatedBudget = budget.budget;
-                updatedBudget.Add(new Item("Groceries", System.Convert.ToInt32(Request.Form["Groceries"]), 5, 1, false));
-                updatedBudget.Add(new Item("Transport", System.Convert.ToInt32(Request.Form["Transport"]), 5, 1, false));
+                updatedBudget.Add(new Item("Groceries", System.Convert.ToInt32(Request.Form["Groceries"]), 5, 1, true));
+                updatedBudget.Add(new Item("Transport", System.Convert.ToInt32(Request.Form["Transport"]), 5, 1, true));
                 updatedBudget.Add(new Item("Utilities", System.Convert.ToInt32(Request.Form["Utilities"]), 5, 1, true));
                 updatedBudget.Add(new Item("Leisure", System.Convert.ToInt32(Request.Form["Leisure"]), 5, 1, true));
                 updatedBudget.Add(new Item("Phone", System.Convert.ToInt32(Request.Form["Phone"]), 5, 1, true));
