@@ -1,3 +1,4 @@
-a,1,2,3,True
-v,5,5,5,False
-d,4,5,5,True
+Testing,200,3,5,True
+Testing2,300,1,2,False
+Wowwww,234,1,2,False
+Abandonhope,1234,5,1,True
