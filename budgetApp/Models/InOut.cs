@@ -13,7 +13,7 @@ namespace budgetApp.Models
                 StreamWriter sw = new StreamWriter(filepath, false);
                 foreach (Item token in Budget){
                     line = token.Name.Replace(",","") + "," + Convert.ToString(token.Amount) + ",";
-                    line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise) + "," + Convert.ToString(token.expense);
+                    line += Convert.ToString(token.Priority) + "," + Convert.ToString(token.Rise) + "," + Convert.ToString(token.Expense);
                     sw.WriteLine(line);
                 }
                 sw.Close();
@@ -44,13 +44,12 @@ namespace budgetApp.Models
                     pos = line.IndexOf(',');
                     input.Rise= int.Parse(line.Substring(0,pos));
                     line = line.Substring(pos + 1);
-                    input.expense = Boolean.Parse(line);
+                    input.Expense = Boolean.Parse(line);
                     Items.Add(input);
                 }
                 sr.Close();
-            } catch(Exception e){
-                Console.WriteLine("budget.txt not found");
-                Console.WriteLine(e.Message);
+            } catch{
+                Console.WriteLine("New budget created");
             }
             return Items;
         }
