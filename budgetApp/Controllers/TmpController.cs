@@ -12,9 +12,9 @@ namespace budgetApp.Controllers
     public class TmpController : Controller
     {
         Budget budget = new Budget(InOut.readBudget());
-        private readonly ILogger<BudgetController> _logger;
+        private readonly ILogger<TmpController> _logger;
 
-        public TmpController(ILogger<BudgetController> logger)
+        public TmpController(ILogger<TmpController> logger)
         {
             _logger = logger;
         }
@@ -46,13 +46,13 @@ namespace budgetApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddItem(string Name, int Amount, int Priority, int Rise, string Type)
+        public ActionResult AddItem(string Name, double Amount, int Priority, int Rise, string Type)
         {
             if(budget.ItemExists(Name))
                 return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
             try
             {
-                Item item = new Item(Name, Amount, Priority, Rise, Boolean.Parse(Type));
+                Item item = new Item(Name, (int) Amount, Priority, Rise, Boolean.Parse(Type));
                 budget.AddItem(item);
                 InOut.saveBudget(budget.budget);
                 return View("Budget", new LoadModel {Mode = "load", Budget = this.budget});
@@ -65,11 +65,11 @@ namespace budgetApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult ChangeItem(string Name, int Amount, int Priority, int Rise, string Type)
+        public ActionResult ChangeItem(string Name, double Amount, int Priority, int Rise, string Type)
         {
             try
             {
-                budget.UpdateItemAmount(Name, Amount);
+                budget.UpdateItemAmount(Name, (int) Amount);
                 budget.UpdateItemPriority(Name, Priority);
                 budget.UpdateItemRise(Name, Rise);
                 budget.UpdateItemType(Name, Boolean.Parse(Type));
