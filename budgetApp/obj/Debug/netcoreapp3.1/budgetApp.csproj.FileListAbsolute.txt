@@ -76,3 +76,6 @@ C:\Users\bbdnet2211\source\repos\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Ra
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\FixedBudget.cshtml.g.cs
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\GeneralBudget.cshtml.g.cs
 C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Budget\VariableBudget.cshtml.g.cs
+C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Tmp\Budget.cshtml.g.cs
+C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Tmp\EditItem.cshtml.g.cs
+C:\Users\bbdnet2209\Desktop\Work\Budget-App\budgetApp\obj\Debug\netcoreapp3.1\Razor\Views\Tmp\NewItem.cshtml.g.cs
