@@ -49,9 +49,8 @@ namespace budgetApp.Models
                     Items.Add(input);
                 }
                 sr.Close();
-            } catch(Exception e){
-                Console.WriteLine("budget.txt not found");
-                Console.WriteLine(e.Message);
+            } catch{
+                Console.WriteLine("New budget created");
             }
             return Items;
         }

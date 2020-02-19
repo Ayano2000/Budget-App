@@ -12,9 +12,9 @@ namespace budgetApp.Controllers
     public class TmpController : Controller
     {
         Budget budget = new Budget(InOut.readBudget());
-        private readonly ILogger<BudgetController> _logger;
+        private readonly ILogger<TmpController> _logger;
 
-        public TmpController(ILogger<BudgetController> logger)
+        public TmpController(ILogger<TmpController> logger)
         {
             _logger = logger;
         }
