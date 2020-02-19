@@ -22,7 +22,7 @@ namespace budgetApp.Models
                 Console.WriteLine(e.Message);
             }
         }
-        
+
         public static List<Item> readBudget(){
             String filepath = "UserData/budget.txt";
             #nullable enable

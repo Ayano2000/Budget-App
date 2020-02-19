@@ -51,13 +51,14 @@ namespace budgetApp.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult FixedBudget(string dummy) // dummy is necessary to prevent same params and return types on methods named the same
         {
             visited = true;
             try
             {
-                IList<Item> FixedItems = new List<Item>();
+                List<Item> FixedItems = new List<Item>();
                 FixedItems.Add(new Item("Salary", System.Convert.ToInt32(Request.Form["Salary"]), 5, 1, false));
                 FixedItems.Add(new Item("Other Income", System.Convert.ToInt32(Request.Form["Other"]), 5, 1, false));
                 FixedItems.Add(new Item("Rent", System.Convert.ToInt32(Request.Form["Rent"]), 5, 1, true));

@@ -5,9 +5,9 @@ namespace budgetApp.Models
 {
     public class Budget
     {
-       //  IList<Item> budget;
+        //IList<Item> budget;
 
-        public Budget(IList<Item> budget_to_add)
+        public Budget(List<Item> budget_to_add)
         {
             this.budget = budget_to_add;
         }
@@ -55,6 +55,29 @@ namespace budgetApp.Models
                 }
             }
         }
+
+        public void UpdateItemType(String name, bool type)
+        {
+            foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    item.expense = type;
+                }
+            }
+        }
+
+        public Boolean ItemExists(String name){
+        foreach (Item item in this.budget)
+            {
+                if (String.Equals(item.Name, name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public int NetTotal()
         {
             int total = 0;
@@ -103,7 +126,27 @@ namespace budgetApp.Models
                 if (String.Equals(item.Name, name))
                 {
                     this.budget.Remove(item);
+                    break ;
                 }
+            }
+        }
+
+        public void AddItem(Item item)
+        {
+            if(ItemExists(item.Name)){
+                foreach(Item oldItem in this.budget)
+                {
+                    if(oldItem.Name == item.Name){
+                        oldItem.Amount=item.Amount;
+                        oldItem.expense = item.expense;
+                        oldItem.Priority = item.Priority;
+                        oldItem.Rise = item.Rise;
+                    }
+                }
+            }
+            else
+            {
+                this.budget.Add(item);
             }
         }
     }

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 Food,135,5,2,True
 WetReeds,100,2,4,False
 Wetknees,100,2,4,True
 Wetknees,100,2,4,True
 Wetknees,100,2,4,True
 Wetknees,100,2,4,True
+=======
+a,1,2,3,True
+v,5,5,5,False
+d,4,5,5,True
+>>>>>>> dec75f007b3517d511f22391a0c17123d36fffcf

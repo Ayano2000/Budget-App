@@ -11,7 +11,7 @@ namespace budgetApp.Models {
             this.Rise = rise;
             this.Expense = expense;
         }
-
+        
         public Item(){}
 
         public override string ToString()
